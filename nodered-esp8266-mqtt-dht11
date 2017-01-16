@@ -1,0 +1,379 @@
+[
+    {
+        "id": "265fd756.cc0488",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "fa0d3393.b7c53",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "c5a012c7.f2e44",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "c5a012c7.f2e44",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard"
+    },
+    {
+        "id": "43e8ca88.33d644",
+        "type": "ui_base",
+        "name": "Node-RED Dashboard",
+        "theme": "theme-dark"
+    },
+    {
+        "id": "d28247db.b70228",
+        "type": "mongodb",
+        "z": "",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "cpu_temp",
+        "name": "mongodb"
+    },
+    {
+        "id": "eb3cec08.d776f",
+        "type": "ui_group",
+        "z": "",
+        "name": "Home2",
+        "tab": "c5a012c7.f2e44",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "781e947a.a43a1c",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "msg.payload",
+        "birthTopic": "esp8266/humidity",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "7564ef83.eea",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "ec84f4e3.6809a8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home3",
+        "icon": "dashboard"
+    },
+    {
+        "id": "213d2bbb.808be4",
+        "type": "ui_tab",
+        "name": "Tab 4",
+        "icon": "dashboard",
+        "order": 4
+    },
+    {
+        "id": "f0180284.8dfda",
+        "type": "ui_group",
+        "z": "",
+        "name": "Home4",
+        "tab": "c5a012c7.f2e44",
+        "order": 3,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "9aec77b6.216028",
+        "type": "pushbullet-config",
+        "z": "",
+        "name": "harshad"
+    },
+    {
+        "id": "6d44c630.b67038",
+        "type": "mqtt in",
+        "z": "265fd756.cc0488",
+        "name": "Temp Notification from esp8266",
+        "topic": "esp8266/temp",
+        "qos": "0",
+        "broker": "781e947a.a43a1c",
+        "x": 135,
+        "y": 145,
+        "wires": [
+            [
+                "f658f647.2ff928"
+            ]
+        ]
+    },
+    {
+        "id": "bc8fb140.b852a",
+        "type": "ui_toast",
+        "z": "265fd756.cc0488",
+        "position": "top right",
+        "displayTime": "5",
+        "name": "Notification",
+        "x": 258,
+        "y": 37,
+        "wires": []
+    },
+    {
+        "id": "9f7dbeac.141b4",
+        "type": "ui_gauge",
+        "z": "265fd756.cc0488",
+        "name": "ESP8266 Temp",
+        "group": "eb3cec08.d776f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Gauge",
+        "label": " C",
+        "format": "ESP8266 Temp",
+        "min": 0,
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 574,
+        "y": 92,
+        "wires": []
+    },
+    {
+        "id": "af7fde91.4d127",
+        "type": "mqtt in",
+        "z": "265fd756.cc0488",
+        "name": "RH Notification from esp8266",
+        "topic": "esp8266/humidity",
+        "qos": "0",
+        "broker": "781e947a.a43a1c",
+        "x": 125,
+        "y": 280,
+        "wires": [
+            [
+                "108965b7.0ebd8a"
+            ]
+        ]
+    },
+    {
+        "id": "83591c20.87cfd",
+        "type": "csv",
+        "z": "265fd756.cc0488",
+        "name": "weatherlog",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": false,
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "temperature,humidity",
+        "x": 646,
+        "y": 215,
+        "wires": [
+            [
+                "300842e4.15f56e",
+                "75b7a497.343e0c"
+            ]
+        ]
+    },
+    {
+        "id": "d6959eb.b03bf6",
+        "type": "ui_toast",
+        "z": "265fd756.cc0488",
+        "position": "top right",
+        "displayTime": "5",
+        "name": "Notification",
+        "x": 403,
+        "y": 455,
+        "wires": []
+    },
+    {
+        "id": "300842e4.15f56e",
+        "type": "file",
+        "z": "265fd756.cc0488",
+        "name": "export esp8266 data to excel",
+        "filename": "weatheresp8266.csv",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 828,
+        "y": 114,
+        "wires": []
+    },
+    {
+        "id": "682f1d41.942e84",
+        "type": "ui_gauge",
+        "z": "265fd756.cc0488",
+        "name": "ESP8266 RH",
+        "group": "f0180284.8dfda",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Gauge",
+        "label": " C",
+        "format": "ESP8266 RH",
+        "min": 0,
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 411,
+        "y": 358,
+        "wires": []
+    },
+    {
+        "id": "4fb060f1.6bbf2",
+        "type": "ui_chart",
+        "z": "265fd756.cc0488",
+        "name": "Temp ESP8266",
+        "group": "eb3cec08.d776f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temp ESP8266",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "%H:%M:%S",
+        "interpolate": "basis",
+        "nodata": "",
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "x": 564,
+        "y": 47,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1013119d.94b80e",
+        "type": "ui_chart",
+        "z": "265fd756.cc0488",
+        "name": "RH ESP8266",
+        "group": "f0180284.8dfda",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "RH ESP8266",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "%H:%M:%S",
+        "interpolate": "basis",
+        "nodata": "",
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "x": 409,
+        "y": 405,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "75b7a497.343e0c",
+        "type": "debug",
+        "z": "265fd756.cc0488",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 818,
+        "y": 283,
+        "wires": []
+    },
+    {
+        "id": "fa9538e6.0a2ed8",
+        "type": "debug",
+        "z": "265fd756.cc0488",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 651,
+        "y": 404,
+        "wires": []
+    },
+    {
+        "id": "34a9c09d.62f4f",
+        "type": "debug",
+        "z": "265fd756.cc0488",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 533,
+        "y": 146,
+        "wires": []
+    },
+    {
+        "id": "f658f647.2ff928",
+        "type": "delay",
+        "z": "265fd756.cc0488",
+        "name": "Delay MQTT Temp feed",
+        "pauseType": "rate",
+        "timeout": "60",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 255,
+        "y": 215,
+        "wires": [
+            [
+                "bc8fb140.b852a",
+                "4fb060f1.6bbf2",
+                "9f7dbeac.141b4",
+                "83591c20.87cfd"
+            ]
+        ]
+    },
+    {
+        "id": "108965b7.0ebd8a",
+        "type": "delay",
+        "z": "265fd756.cc0488",
+        "name": "Delay MQTT RH feed",
+        "pauseType": "rate",
+        "timeout": "60",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 154,
+        "y": 365,
+        "wires": [
+            [
+                "682f1d41.942e84",
+                "1013119d.94b80e",
+                "d6959eb.b03bf6",
+                "83591c20.87cfd"
+            ]
+        ]
+    }
+]
