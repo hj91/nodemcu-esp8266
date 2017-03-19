@@ -1,0 +1,4 @@
+Use this command to flash MicroPython binary to your nodemcu
+
+sudo  esptool.py --port /dev/ttyUSB0 --baud 115200  write_flash --flash_size=8m 0 /home/harshad/Downloads/esp8266-20161110-v1.8.6.bin  --flash_size=8m 0 /home/harshad/Downloads/esp8266-20161110-v1.8
+
