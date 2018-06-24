@@ -1,0 +1,83 @@
+[
+    {
+        "id": "2f672f5e.71145",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "81120c54.e07e5",
+        "type": "modbus-client",
+        "z": "",
+        "name": "esp8266",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "192.168.1.5",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "584c9492.4829ec",
+        "type": "modbus-write",
+        "z": "2f672f5e.71145",
+        "name": "esp8266-modbus",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "1",
+        "quantity": "1",
+        "server": "81120c54.e07e5",
+        "x": 312,
+        "y": 185,
+        "wires": [
+            [
+                "4c281375.06f62c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3a83909.392cc7",
+        "type": "inject",
+        "z": "2f672f5e.71145",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 123,
+        "y": 138,
+        "wires": [
+            [
+                "584c9492.4829ec"
+            ]
+        ]
+    },
+    {
+        "id": "4c281375.06f62c",
+        "type": "modbus-response",
+        "z": "2f672f5e.71145",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 611,
+        "y": 180,
+        "wires": []
+    }
+]
