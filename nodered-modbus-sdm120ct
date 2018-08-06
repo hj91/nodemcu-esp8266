@@ -1,0 +1,37 @@
+[
+    {
+        "id": "ee9460d0.d5218",
+        "type": "mqtt out",
+        "z": "fc9a1df.81733e",
+        "name": "Voltage",
+        "topic": "modbus/voltage",
+        "qos": "",
+        "retain": "",
+        "broker": "3fdcd836.ff1bb8",
+        "x": 631.5,
+        "y": 47,
+        "wires": []
+    },
+    {
+        "id": "3fdcd836.ff1bb8",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "raspberrypi",
+        "broker": "192.168.1.50",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
