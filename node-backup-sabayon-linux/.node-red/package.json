@@ -1,0 +1,18 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "dependencies": {
+        "compactcom-40-nodes": "~1.0.1",
+        "node-red-contrib-bacnet": "~0.1.0",
+        "node-red-contrib-iiot-opcua": "~2.7.1",
+        "node-red-contrib-knx": "~0.8.2",
+        "node-red-contrib-knx-easy": "0.0.6",
+        "node-red-contrib-knxjs": "~1.0.4",
+        "node-red-contrib-mdashboard": "~0.1.5",
+        "node-red-contrib-modbus": "~3.6.1",
+        "node-red-contrib-modbustcp-no-pooling": "~0.1.7",
+        "node-red-contrib-remote-io": "~1.0.8",
+        "node-red-dashboard": "~2.9.6"
+    }
+}
