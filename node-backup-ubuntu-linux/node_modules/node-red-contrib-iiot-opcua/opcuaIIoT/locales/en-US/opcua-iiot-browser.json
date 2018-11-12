@@ -1,0 +1,25 @@
+{
+  "opcua-iiot-contrib": {
+    "tabs-label":{
+      "settings": "Settings",
+      "browser": "Browser"
+    },
+    "label": {
+      "connector": "Connector",
+      "browseAll": "Browse All",
+      "justValue": "Send Just Values",
+      "sendNodesToRead": "Results To Read",
+      "sendNodesToListener": "Results To Listener",
+      "sendNodesToBrowser": "Results To Browser",
+      "singleBrowseResult": "Single Result",
+      "showActivities": "Show Activities",
+      "showErrors": "Show Errors",
+      "topic": "Topic",
+      "nodeId": "Node-Id",
+      "lookupUseHint": "Start browsing with the lookup button! Select and lookup again to go deeper in hierarchy. Restart at root by deleting the input content.",
+      "recursiveBrowse": "Recursive",
+      "recursiveDepth": "Depth",
+      "delayPerMessage": "Delay msg"
+    }
+  }
+}

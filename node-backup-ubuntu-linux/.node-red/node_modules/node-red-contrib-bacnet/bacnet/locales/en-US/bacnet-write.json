@@ -1,0 +1,19 @@
+{
+  "bacnet-contrib": {
+    "label": {
+      "device": "Device",
+      "objectType": "Type",
+      "instance": "Instance",
+      "valueTag": "App-Tag",
+      "valueValue": "Value",
+      "propertyId": "Property",
+      "propertyIndex": "Index",
+      "invokeId": "Invoke Id",
+      "priority": "Priority",
+      "multipleWrite": "Multiple Write",
+      "server": "Client",
+      "showActivities": "Show Activities",
+      "showErrors": "Show Errors"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+[
+  {
+    "id": "b3974c60.a56ab8",
+    "type": "tab",
+    "label": "IIoT OPC UA Events",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "d9bca212.ee7d3",
+    "type": "debug",
+    "z": "b3974c60.a56ab8",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "complete": "true",
+    "x": 730,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "cbc425f4.8b596",
+    "type": "OPCUA-IIoT-Event",
+    "z": "b3974c60.a56ab8",
+    "eventType": "BaseEventType",
+    "eventTypeLabel": "BaseEventType (i=2041)",
+    "resultType": "basic",
+    "queueSize": "1000",
+    "usingListener": true,
+    "name": "Base Events",
+    "showStatusActivities": false,
+    "showErrors": false,
+    "x": 420,
+    "y": 120,
+    "wires": [
+      [
+        "d4e7bb7a.8ba54"
+      ]
+    ]
+  },
+  {
+    "id": "99ea348a.48cfd8",
+    "type": "OPCUA-IIoT-Inject",
+    "z": "b3974c60.a56ab8",
+    "injectType": "listen",
+    "payload": "200",
+    "payloadType": "num",
+    "topic": "",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "startDelay": "",
+    "name": "listen with 200 ms",
+    "addressSpaceItems": [
+      {
+        "name": "Tanks",
+        "nodeId": "ns=1;i=1000",
+        "datatypeName": ""
+      },
+      {
+        "name": "Server",
+        "nodeId": "ns=0;i=2253",
+        "datatypeName": ""
+      }
+    ],
+    "x": 230,
+    "y": 120,
+    "wires": [
+      [
+        "cbc425f4.8b596"
+      ]
+    ]
+  },
+  {
+    "id": "d4e7bb7a.8ba54",
+    "type": "OPCUA-IIoT-Listener",
+    "z": "b3974c60.a56ab8",
+    "connector": "fe9e7411.128358",
+    "action": "events",
+    "queueSize": "100",
+    "name": "",
+    "topic": "",
+    "justValue": true,
+    "useGroupItems": false,
+    "showStatusActivities": false,
+    "showErrors": true,
+    "x": 580,
+    "y": 120,
+    "wires": [
+      [
+        "d9bca212.ee7d3"
+      ]
+    ]
+  },
+  {
+    "id": "fe9e7411.128358",
+    "type": "OPCUA-IIoT-Connector",
+    "z": "",
+    "discoveryUrl": "",
+    "endpoint": "opc.tcp://localhost:55388/",
+    "keepSessionAlive": true,
+    "loginEnabled": false,
+    "securityPolicy": "None",
+    "securityMode": "NONE",
+    "name": "LOCAL EVENT SERVER",
+    "showErrors": false,
+    "publicCertificateFile": "",
+    "privateKeyFile": "",
+    "defaultSecureTokenLifetime": "",
+    "endpointMustExist": false,
+    "autoSelectRightEndpoint": false,
+    "strategyMaxRetry": "",
+    "strategyInitialDelay": "",
+    "strategyMaxDelay": "",
+    "strategyRandomisationFactor": "",
+    "requestedSessionTimeout": "",
+    "connectionStartDelay": "",
+    "reconnectDelay": ""
+  }
+]

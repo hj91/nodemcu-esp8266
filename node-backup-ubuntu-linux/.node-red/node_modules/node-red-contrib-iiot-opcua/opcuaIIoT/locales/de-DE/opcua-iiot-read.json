@@ -1,0 +1,14 @@
+{
+  "opcua-iiot-contrib": {
+    "label": {
+      "connector": "Verbindung",
+      "showActivities": "Zeige Aktivitäten",
+      "showErrors": "Zeige Fehler",
+      "attributeId": "Attribut Id",
+      "maxAge": "Max. Alter",
+      "depth": "Tiefe",
+      "justValue": "Sende nur Werte",
+      "parseStrings": "Parse Daten"
+    }
+  }
+}

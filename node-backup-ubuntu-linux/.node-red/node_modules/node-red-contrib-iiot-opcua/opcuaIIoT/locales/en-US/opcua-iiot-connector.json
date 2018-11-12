@@ -1,0 +1,41 @@
+{
+  "opcua-iiot-contrib": {
+    "label": {
+      "discoveryUrl": "Discovery",
+      "endpoint": "Endpoint",
+      "connector": "Connector",
+      "showErrors": "Show Errors",
+      "type": "Type",
+      "host": "Host",
+      "port": "Port",
+      "securityPolicy": "Security Policy",
+      "securityMode": "Security Mode",
+      "user": "User",
+      "password": "Password",
+      "credentials": "Use Login",
+      "keepSessionAlive": "Keep Session Alive",
+      "publicCertificateFile": "Public",
+      "privateKeyFile": "Private",
+      "defaultSecureTokenLifetime": "Secure TLT",
+      "certificateFiles": "Certificate Files",
+      "endpointMustExist": "Endpoint Must Exist",
+      "autoSelectRightEndpoint": "Auto Select Endpoint",
+      "strategyMaxRetry": "Max. Retry",
+      "strategyInitialDelay": "Initial Delay",
+      "strategyMaxDelay": "Max. Delay",
+      "strategyRandomisationFactor": "Random Factor",
+      "requestedSessionTimeout": "Requested Timeout",
+      "connectionStartDelay": "Start",
+      "reconnectDelay": "Reconnect",
+      "connectionStopDelay": "Stop",
+      "serverConnectionDelays": "Server Connection Delays",
+      "maxBadSessionRequests": "Max. BadSession Requests",
+      "individualCerts": "Use individual Certificate Files"
+    },
+    "tabs-label": {
+      "settings": "Settings",
+      "security": "Security",
+      "strategy": "Strategy"
+    }
+  }
+}

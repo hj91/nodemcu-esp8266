@@ -1,0 +1,13 @@
+{
+  "modbus-contrib": {
+    "label": {
+      "showActivities": "Aktivitäten anzeigen",
+      "showErrors": "Fehler anzeigen",
+      "address": "Adresse",
+      "quantity": "Anzahl",
+      "pollrate": "Poll-Rate",
+      "useIOFile": "Nutze IO-Datei",
+      "ioFile": "IO-Datei"
+    }
+  }
+}

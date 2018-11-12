@@ -1,0 +1,23 @@
+{
+  "opcua-iiot-contrib": {
+    "tabs-label":{
+      "settings": "Settings",
+      "filter": "Filter"
+    },
+    "label": {
+      "activateUnsetFilter": "Unset filtering",
+      "activateFilters": "Activate filters",
+      "negateFilter": "Negate filter",
+      "filters": "Filter List",
+      "connector": "Connector",
+      "justValue": "Remove References",
+      "singleResult": "Single Request",
+      "showActivities": "Show Activities",
+      "showErrors": "Show Errors",
+      "topic": "Topic",
+      "nodeId": "Node-Id",
+      "lookupUseHint": "You can crawl with the lookup by select and lookup agian.",
+      "delayPerMessage": "Delay msg"
+    }
+  }
+}

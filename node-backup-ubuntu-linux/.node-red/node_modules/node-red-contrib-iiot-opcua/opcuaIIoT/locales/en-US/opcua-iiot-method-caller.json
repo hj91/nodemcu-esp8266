@@ -1,0 +1,20 @@
+{
+  "opcua-iiot-contrib": {
+    "tabs-label":{
+      "settings": "Settings",
+      "argument": "Input-Arguments"
+    },
+    "label": {
+      "connector": "Connector",
+      "objectId": "Object-Id",
+      "methodId": "Method-Id",
+      "methodType": "Method Type",
+      "value": "Value",
+      "showActivities": "Show Activities",
+      "showErrors": "Show Errors",
+      "addButton": "Add",
+      "removeButton": "Remove",
+      "justValue": "Send Just Values"
+    }
+  }
+}

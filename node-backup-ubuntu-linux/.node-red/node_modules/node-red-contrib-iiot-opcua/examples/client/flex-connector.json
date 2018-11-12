@@ -1,0 +1,179 @@
+[
+  {
+    "id": "c23b6c91.59828",
+    "type": "tab",
+    "label": "OPC UA IIoT Flex Connector",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "cac3c43b.22962",
+    "type": "OPCUA-IIoT-Flex-Connector",
+    "z": "c23b6c91.59828",
+    "name": "",
+    "showStatusActivities": false,
+    "showErrors": true,
+    "connector": "4545bd8a.162794",
+    "x": 400,
+    "y": 140,
+    "wires": [
+      [
+        "9b8fcce6.503a68"
+      ]
+    ]
+  },
+  {
+    "id": "45fdf711.8ee38",
+    "type": "inject",
+    "z": "c23b6c91.59828",
+    "name": "Server 81",
+    "topic": "",
+    "payload": "{\"discoveryUrl\":null,\"endpoint\":\"opc.tcp://localhost:55381/\",\"keepSessionAlive\":true,\"securityPolicy\":\"None\",\"securityMode\":\"NONE\",\"name\":\"LOCAL FLEXIBLE INJECTED SERVER\",\"showErrors\":true,\"publicCertificateFile\":null,\"privateKeyFile\":null,\"defaultSecureTokenLifetime\":0,\"endpointMustExist\":false,\"autoSelectRightEndpoint\":false,\"strategyMaxRetry\":0,\"strategyInitialDelay\":0,\"strategyMaxDelay\":0,\"strategyRandomisationFactor\":0,\"requestedSessionTimeout\":0,\"connectionStartDelay\":0,\"reconnectDelay\":0}",
+    "payloadType": "json",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 160,
+    "y": 140,
+    "wires": [
+      [
+        "cac3c43b.22962"
+      ]
+    ]
+  },
+  {
+    "id": "9b8fcce6.503a68",
+    "type": "debug",
+    "z": "c23b6c91.59828",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "x": 570,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "d245fa66.fd39e",
+    "type": "inject",
+    "z": "c23b6c91.59828",
+    "name": "Server 82 wrong",
+    "topic": "",
+    "payload": "{\"endpoint\":\"opc.tcp://localhost:55382/\",\"keepSessionAlive\":true,\"showErrors\":true,\"defaultSecureTokenLifetime\":360000,\"endpointMustExist\":false,\"autoSelectRightEndpoint\":false}",
+    "payloadType": "json",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 180,
+    "y": 100,
+    "wires": [
+      [
+        "cac3c43b.22962"
+      ]
+    ]
+  },
+  {
+    "id": "a2df0434.aa3b88",
+    "type": "inject",
+    "z": "c23b6c91.59828",
+    "name": "Server 80",
+    "topic": "",
+    "payload": "{\"discoveryUrl\":null,\"endpoint\":\"opc.tcp://localhost:55380/\",\"keepSessionAlive\":true,\"securityPolicy\":\"None\",\"securityMode\":\"NONE\",\"name\":\"LOCAL FLEXIBLE INJECTED SERVER\",\"showErrors\":true,\"publicCertificateFile\":null,\"privateKeyFile\":null,\"defaultSecureTokenLifetime\":0,\"endpointMustExist\":false,\"autoSelectRightEndpoint\":false,\"strategyMaxRetry\":0,\"strategyInitialDelay\":0,\"strategyMaxDelay\":0,\"strategyRandomisationFactor\":0,\"requestedSessionTimeout\":0,\"connectionStartDelay\":0,\"reconnectDelay\":0}",
+    "payloadType": "json",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 160,
+    "y": 180,
+    "wires": [
+      [
+        "cac3c43b.22962"
+      ]
+    ]
+  },
+  {
+    "id": "1d4990a8.c5c607",
+    "type": "comment",
+    "z": "c23b6c91.59828",
+    "name": "Please, use the client browser flow!",
+    "info": "see Node-RED menu -> \nImport -> Examples -> \niiot opcua -> client -> browser",
+    "x": 500,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "a5c82001.09fb58",
+    "type": "OPCUA-IIoT-Server",
+    "z": "c23b6c91.59828",
+    "port": "55381",
+    "endpoint": "",
+    "acceptExternalCommands": true,
+    "maxAllowedSessionNumber": "",
+    "maxConnectionsPerEndpoint": "",
+    "maxAllowedSubscriptionNumber": "",
+    "alternateHostname": "",
+    "name": "Demos Server 81",
+    "showStatusActivities": false,
+    "showErrors": true,
+    "asoDemo": true,
+    "allowAnonymous": true,
+    "isAuditing": false,
+    "serverDiscovery": false,
+    "users": [],
+    "xmlsets": [],
+    "publicCertificateFile": "",
+    "privateCertificateFile": "",
+    "registerServerMethod": 1,
+    "discoveryServerEndpointUrl": "",
+    "capabilitiesForMDNS": "",
+    "maxNodesPerRead": 1000,
+    "maxNodesPerBrowse": 2000,
+    "delayToClose": 1000,
+    "x": 410,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2db23b70.cee92c",
+    "type": "comment",
+    "z": "c23b6c91.59828",
+    "name": "Server 88 is Default Demo Server",
+    "info": "",
+    "x": 450,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "4545bd8a.162794",
+    "type": "OPCUA-IIoT-Connector",
+    "z": "c23b6c91.59828",
+    "discoveryUrl": "",
+    "endpoint": "opc.tcp://localhost:55388/",
+    "keepSessionAlive": true,
+    "loginEnabled": false,
+    "securityPolicy": "None",
+    "securityMode": "NONE",
+    "name": "LOCAL FLEX CONECTOR SERVER",
+    "showErrors": true,
+    "publicCertificateFile": "",
+    "privateKeyFile": "",
+    "defaultSecureTokenLifetime": "",
+    "endpointMustExist": false,
+    "autoSelectRightEndpoint": false,
+    "strategyMaxRetry": "",
+    "strategyInitialDelay": "",
+    "strategyMaxDelay": "",
+    "strategyRandomisationFactor": "",
+    "requestedSessionTimeout": "",
+    "connectionStartDelay": "",
+    "reconnectDelay": "",
+    "maxBadSessionRequests": ""
+  }
+]

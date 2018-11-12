@@ -1,0 +1,14 @@
+{
+  "opcua-iiot-contrib": {
+    "label": {
+      "connector": "Verbindung",
+      "showActivities": "Zeige Aktivitäten",
+      "showErrors": "Zeige Fehler",
+      "actiontype": "Actionstyp",
+      "attributeId": "Attribut Id",
+      "queueSize": "Queue Umfang",
+      "justValue": "Sende nur Werte",
+      "useGroupItems": "Nutze Gruppierung"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "opcua-iiot-contrib": {
+    "label": {
+      "connector": "Verbindung",
+      "justValue": "Sende nur Werte",
+      "showActivities": "Zeige Aktivitäten",
+      "showErrors": "Zeige Fehler"
+    }
+  }
+}

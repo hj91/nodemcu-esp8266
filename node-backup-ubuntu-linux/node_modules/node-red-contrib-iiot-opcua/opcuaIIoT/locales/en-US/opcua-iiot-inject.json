@@ -1,0 +1,63 @@
+{
+  "opcuaiiotinject": {
+    "injectTypeListener": "Listener Inject",
+    "inject": "inject",
+    "opcuaiiotinject": "inject",
+    "injectType": "Type",
+    "repeat": "repeat = __repeat__",
+    "crontab": "crontab = __crontab__",
+    "stopped": "stopped",
+    "failed": "Inject failed: __error__",
+    "label": {
+      "payload": "Payload",
+      "interval": "Interval",
+      "repeat": "Repeat",
+      "datatype": "Data Type",
+      "nodeid": "Node-Id",
+      "injectType": "Type"
+    },
+    "timestamp": "timestamp",
+    "none": "none",
+    "interval": "interval",
+    "interval-time": "interval between times",
+    "time": "at a specific time",
+    "milliseconds": "milliseconds",
+    "seconds": "seconds",
+    "minutes": "minutes",
+    "hours": "hours",
+    "between": "between",
+    "previous": "previous value",
+    "at": "at",
+    "and": "and",
+    "every": "every",
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "on": "on",
+    "onstart": "Inject once at start",
+    "tip": "<b>Note:</b> \"interval between times\" and \"at a specific time\" will use cron.<br/>See info box for details.",
+    "success": "Successfully injected: __label__",
+    "errors": {
+      "failed": "inject failed, see log for details"
+    },
+    "startDelay": "Delay sec. at start",
+    "addButton": "Add",
+    "tabs-label": {
+      "addressSpaceItems": "OPC UA Nodes",
+      "settings": "Settings",
+      "security": "Security"
+    },
+    "type-label":{
+      "inject": "inject",
+      "read": "read",
+      "write": "write",
+      "listen": "listen"
+    }
+  }
+}

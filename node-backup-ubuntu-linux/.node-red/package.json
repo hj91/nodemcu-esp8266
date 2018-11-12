@@ -1,0 +1,13 @@
+{
+  "name": "node-red-project",
+  "description": "A Node-RED Project",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "compactcom-40-nodes": "~1.0.1",
+    "node-red-contrib-bacnet": "~0.1.0",
+    "node-red-contrib-modbus": "~4.0.0",
+    "node-red-contrib-opcua": "~0.2.32",
+    "node-red-dashboard": "~2.10.1"
+  }
+}

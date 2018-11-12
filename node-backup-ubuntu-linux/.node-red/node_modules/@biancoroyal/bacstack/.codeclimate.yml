@@ -1,0 +1,15 @@
+engines:
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
+  duplication:
+    enabled: false
+exclude_paths:
+- "CHANGELOG.md"
+ratings:
+  paths:
+  - "lib/**/*"
+  - "index.js"

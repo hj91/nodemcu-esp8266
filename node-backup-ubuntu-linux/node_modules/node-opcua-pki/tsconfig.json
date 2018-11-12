@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": true
+  },
+  "files": [
+    "lib/index.ts",
+    "test/helpers.ts",
+    "test/test_certificate_authority.ts",
+    "test/test_certificate_manager.ts"
+  ]
+}

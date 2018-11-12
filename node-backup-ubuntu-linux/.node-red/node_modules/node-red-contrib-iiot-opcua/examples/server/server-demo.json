@@ -1,0 +1,216 @@
+[
+  {
+    "id": "5c574024.b4f8b",
+    "type": "tab",
+    "label": "IIoT OPC UA Demo",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "948b47e3.12006",
+    "type": "OPCUA-IIoT-Server-Command",
+    "z": "5c574024.b4f8b",
+    "commandtype": "restart",
+    "nodeId": "",
+    "name": "restart",
+    "x": 330,
+    "y": 140,
+    "wires": [
+      [
+        "fae69d4.42f43e",
+        "77e05a5b.5418b4"
+      ]
+    ]
+  },
+  {
+    "id": "6f9ea196.603618",
+    "type": "OPCUA-IIoT-Server-ASO",
+    "z": "5c574024.b4f8b",
+    "nodeId": "s=TestFolder",
+    "browsename": "TestFolder",
+    "displayname": "Test Folder",
+    "objecttype": "FolderType",
+    "datatype": "",
+    "value": "",
+    "referenceNodeId": "ns=0;i=85",
+    "referencetype": "Organizes",
+    "name": "ASO Test Folder",
+    "x": 340,
+    "y": 200,
+    "wires": [
+      [
+        "fae69d4.42f43e"
+      ]
+    ]
+  },
+  {
+    "id": "ca04589a.3702a",
+    "type": "comment",
+    "z": "5c574024.b4f8b",
+    "name": "information",
+    "info": "Clients to browse\n\nUA-Expert: https://www.unified-automation.com/products/development-tools/uaexpert.html\nOPCUA-Commander: https://github.com/node-opcua/opcua-commander\nNode-RED: use the browse examples to start browsing the server via Node-RED\n\nHappy wiring!\nKlaus Landsdorf\nhttp://bianco-royal.de/",
+    "x": 680,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "28976fc9.b05868",
+    "type": "OPCUA-IIoT-Inject",
+    "z": "5c574024.b4f8b",
+    "injectType": "inject",
+    "payload": "",
+    "payloadType": "date",
+    "topic": "",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "startDelay": "",
+    "name": "",
+    "addressSpaceItems": [],
+    "x": 180,
+    "y": 140,
+    "wires": [
+      [
+        "948b47e3.12006",
+        "8d37cc1f.a39e28"
+      ]
+    ]
+  },
+  {
+    "id": "1c500b3b.6f72b5",
+    "type": "OPCUA-IIoT-Inject",
+    "z": "5c574024.b4f8b",
+    "injectType": "inject",
+    "payload": "",
+    "payloadType": "date",
+    "topic": "",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "startDelay": "",
+    "name": "",
+    "addressSpaceItems": [],
+    "x": 160,
+    "y": 200,
+    "wires": [
+      [
+        "6f9ea196.603618"
+      ]
+    ]
+  },
+  {
+    "id": "fae69d4.42f43e",
+    "type": "OPCUA-IIoT-Server",
+    "z": "5c574024.b4f8b",
+    "port": "55388",
+    "endpoint": "",
+    "acceptExternalCommands": true,
+    "maxAllowedSessionNumber": "",
+    "maxConnectionsPerEndpoint": "",
+    "maxAllowedSubscriptionNumber": "",
+    "alternateHostname": "",
+    "name": "",
+    "showStatusActivities": false,
+    "showErrors": false,
+    "asoDemo": true,
+    "allowAnonymous": true,
+    "isAuditing": false,
+    "serverDiscovery": true,
+    "users": [],
+    "xmlsets": [],
+    "publicCertificateFile": "",
+    "privateCertificateFile": "",
+    "registerServerMethod": "1",
+    "discoveryServerEndpointUrl": "",
+    "capabilitiesForMDNS": "",
+    "maxNodesPerRead": "",
+    "maxNodesPerBrowse": "",
+    "delayToClose": "",
+    "x": 570,
+    "y": 140,
+    "wires": [
+      [
+        "61a9c094.334de8"
+      ]
+    ]
+  },
+  {
+    "id": "61a9c094.334de8",
+    "type": "debug",
+    "z": "5c574024.b4f8b",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "x": 730,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "77e05a5b.5418b4",
+    "type": "debug",
+    "z": "5c574024.b4f8b",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "x": 510,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "8d37cc1f.a39e28",
+    "type": "debug",
+    "z": "5c574024.b4f8b",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "x": 330,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "b3f5ac70.b65888",
+    "type": "OPCUA-IIoT-Server-Command",
+    "z": "5c574024.b4f8b",
+    "commandtype": "deleteNode",
+    "nodeId": "ns=1;s=TestFolder",
+    "name": "delete Test Folder",
+    "x": 350,
+    "y": 240,
+    "wires": [
+      [
+        "fae69d4.42f43e"
+      ]
+    ]
+  },
+  {
+    "id": "b6743890.b4a878",
+    "type": "OPCUA-IIoT-Inject",
+    "z": "5c574024.b4f8b",
+    "injectType": "inject",
+    "payload": "",
+    "payloadType": "date",
+    "topic": "",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "startDelay": "",
+    "name": "",
+    "addressSpaceItems": [],
+    "x": 160,
+    "y": 240,
+    "wires": [
+      [
+        "b3f5ac70.b65888"
+      ]
+    ]
+  }
+]

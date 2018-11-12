@@ -1,0 +1,15 @@
+{
+  "bacnet-contrib": {
+    "label": {
+      "device": "Device",
+      "objectType": "Type",
+      "instance": "Instance",
+      "propertyId": "Property Id",
+      "arrayIndex": "Array Index",
+      "multipleRead": "Multiple Read",
+      "server": "Client",
+      "showActivities": "Show Activities",
+      "showErrors": "Show Errors"
+    }
+  }
+}

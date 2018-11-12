@@ -1,0 +1,1153 @@
+{
+ "nodes": {
+  "node-red": {
+   "name": "node-red",
+   "version": "0.19.5-git",
+   "local": false,
+   "nodes": {
+    "sentiment": {
+     "name": "sentiment",
+     "types": [
+      "sentiment"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/analysis/72-sentiment.js"
+    },
+    "inject": {
+     "name": "inject",
+     "types": [
+      "inject"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/20-inject.js"
+    },
+    "catch": {
+     "name": "catch",
+     "types": [
+      "catch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/25-catch.js"
+    },
+    "status": {
+     "name": "status",
+     "types": [
+      "status"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/25-status.js"
+    },
+    "debug": {
+     "name": "debug",
+     "types": [
+      "debug"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/58-debug.js"
+    },
+    "link": {
+     "name": "link",
+     "types": [
+      "link in",
+      "link out"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/60-link.js"
+    },
+    "exec": {
+     "name": "exec",
+     "types": [
+      "exec"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/75-exec.js"
+    },
+    "function": {
+     "name": "function",
+     "types": [
+      "function"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/80-function.js"
+    },
+    "template": {
+     "name": "template",
+     "types": [
+      "template"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/80-template.js"
+    },
+    "delay": {
+     "name": "delay",
+     "types": [
+      "delay"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/89-delay.js"
+    },
+    "trigger": {
+     "name": "trigger",
+     "types": [
+      "trigger"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/89-trigger.js"
+    },
+    "comment": {
+     "name": "comment",
+     "types": [
+      "comment"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/90-comment.js"
+    },
+    "unknown": {
+     "name": "unknown",
+     "types": [
+      "unknown"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/core/98-unknown.js"
+    },
+    "rpi-gpio": {
+     "name": "rpi-gpio",
+     "types": [
+      "rpi-gpio in",
+      "rpi-gpio out",
+      "rpi-mouse",
+      "rpi-keyboard"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/hardware/36-rpi-gpio.js"
+    },
+    "tls": {
+     "name": "tls",
+     "types": [
+      "tls-config"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/05-tls.js"
+    },
+    "mqtt": {
+     "name": "mqtt",
+     "types": [
+      "mqtt in",
+      "mqtt out",
+      "mqtt-broker"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/10-mqtt.js"
+    },
+    "httpin": {
+     "name": "httpin",
+     "types": [
+      "http in",
+      "http response"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/21-httpin.js"
+    },
+    "httprequest": {
+     "name": "httprequest",
+     "types": [
+      "http request"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/21-httprequest.js"
+    },
+    "websocket": {
+     "name": "websocket",
+     "types": [
+      "websocket in",
+      "websocket out",
+      "websocket-listener",
+      "websocket-client"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/22-websocket.js"
+    },
+    "watch": {
+     "name": "watch",
+     "types": [
+      "watch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/23-watch.js"
+    },
+    "tcpin": {
+     "name": "tcpin",
+     "types": [
+      "tcp in",
+      "tcp out",
+      "tcp request"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/31-tcpin.js"
+    },
+    "udp": {
+     "name": "udp",
+     "types": [
+      "udp in",
+      "udp out"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/io/32-udp.js"
+    },
+    "switch": {
+     "name": "switch",
+     "types": [
+      "switch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/logic/10-switch.js"
+    },
+    "change": {
+     "name": "change",
+     "types": [
+      "change"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/logic/15-change.js"
+    },
+    "range": {
+     "name": "range",
+     "types": [
+      "range"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/logic/16-range.js"
+    },
+    "split": {
+     "name": "split",
+     "types": [
+      "split",
+      "join"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/logic/17-split.js"
+    },
+    "sort": {
+     "name": "sort",
+     "types": [
+      "sort"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/logic/18-sort.js"
+    },
+    "batch": {
+     "name": "batch",
+     "types": [
+      "batch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/logic/19-batch.js"
+    },
+    "CSV": {
+     "name": "CSV",
+     "types": [
+      "csv"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/parsers/70-CSV.js"
+    },
+    "HTML": {
+     "name": "HTML",
+     "types": [
+      "html"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/parsers/70-HTML.js"
+    },
+    "JSON": {
+     "name": "JSON",
+     "types": [
+      "json"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/parsers/70-JSON.js"
+    },
+    "XML": {
+     "name": "XML",
+     "types": [
+      "xml"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/parsers/70-XML.js"
+    },
+    "YAML": {
+     "name": "YAML",
+     "types": [
+      "yaml"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/parsers/70-YAML.js"
+    },
+    "tail": {
+     "name": "tail",
+     "types": [
+      "tail"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/storage/28-tail.js"
+    },
+    "file": {
+     "name": "file",
+     "types": [
+      "file",
+      "file in"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "/home/harshad/node-red/nodes/core/storage/50-file.js"
+    }
+   }
+  },
+  "node-red-node-email": {
+   "name": "node-red-node-email",
+   "version": "0.1.29",
+   "local": false,
+   "nodes": {
+    "email": {
+     "name": "email",
+     "types": [
+      "e-mail",
+      "e-mail in"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red-node-email",
+     "file": "/home/harshad/node-red/node_modules/node-red-node-email/61-email.js"
+    }
+   }
+  },
+  "node-red-node-feedparser": {
+   "name": "node-red-node-feedparser",
+   "version": "0.1.14",
+   "local": false,
+   "nodes": {
+    "feedparse": {
+     "name": "feedparse",
+     "types": [
+      "feedparse"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red-node-feedparser",
+     "file": "/home/harshad/node-red/node_modules/node-red-node-feedparser/32-feedparse.js"
+    }
+   }
+  },
+  "node-red-node-rbe": {
+   "name": "node-red-node-rbe",
+   "version": "0.2.4",
+   "local": false,
+   "nodes": {
+    "rbe": {
+     "name": "rbe",
+     "types": [
+      "rbe"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red-node-rbe",
+     "file": "/home/harshad/node-red/node_modules/node-red-node-rbe/rbe.js"
+    }
+   }
+  },
+  "node-red-node-twitter": {
+   "name": "node-red-node-twitter",
+   "version": "1.1.4",
+   "local": false,
+   "nodes": {
+    "twitter": {
+     "name": "twitter",
+     "types": [
+      "twitter-credentials",
+      "twitter in",
+      "twitter out"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red-node-twitter",
+     "file": "/home/harshad/node-red/node_modules/node-red-node-twitter/27-twitter.js"
+    }
+   }
+  },
+  "node-red-contrib-iiot-opcua": {
+   "name": "node-red-contrib-iiot-opcua",
+   "version": "3.4.1",
+   "local": true,
+   "nodes": {
+    "OPCUA-IIoT-Browser": {
+     "name": "OPCUA-IIoT-Browser",
+     "types": [
+      "OPCUA-IIoT-Browser"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-browser.js"
+    },
+    "OPCUA-IIoT-Connector": {
+     "name": "OPCUA-IIoT-Connector",
+     "types": [
+      "OPCUA-IIoT-Connector"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-connector.js"
+    },
+    "OPCUA-IIoT-Crawler": {
+     "name": "OPCUA-IIoT-Crawler",
+     "types": [
+      "OPCUA-IIoT-Crawler"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-crawler.js"
+    },
+    "OPCUA-IIoT-Discovery": {
+     "name": "OPCUA-IIoT-Discovery",
+     "types": [
+      "OPCUA-IIoT-Discovery"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-discovery.js"
+    },
+    "OPCUA-IIoT-Event": {
+     "name": "OPCUA-IIoT-Event",
+     "types": [
+      "OPCUA-IIoT-Event"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-event.js"
+    },
+    "OPCUA-IIoT-Flex-Connector": {
+     "name": "OPCUA-IIoT-Flex-Connector",
+     "types": [
+      "OPCUA-IIoT-Flex-Connector"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-flex-connector.js"
+    },
+    "OPCUA-IIoT-Flex-Server": {
+     "name": "OPCUA-IIoT-Flex-Server",
+     "types": [
+      "OPCUA-IIoT-Flex-Server"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-flex-server.js"
+    },
+    "OPCUA-IIoT-Inject": {
+     "name": "OPCUA-IIoT-Inject",
+     "types": [
+      "OPCUA-IIoT-Inject"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-inject.js"
+    },
+    "OPCUA-IIoT-Listener": {
+     "name": "OPCUA-IIoT-Listener",
+     "types": [
+      "OPCUA-IIoT-Listener"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-listener.js"
+    },
+    "OPCUA-IIoT-Method-Caller": {
+     "name": "OPCUA-IIoT-Method-Caller",
+     "types": [
+      "OPCUA-IIoT-Method-Caller"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-method-caller.js"
+    },
+    "OPCUA-IIoT-Node": {
+     "name": "OPCUA-IIoT-Node",
+     "types": [
+      "OPCUA-IIoT-Node"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-node.js"
+    },
+    "OPCUA-IIoT-Read": {
+     "name": "OPCUA-IIoT-Read",
+     "types": [
+      "OPCUA-IIoT-Read"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-read.js"
+    },
+    "OPCUA-IIoT-Response": {
+     "name": "OPCUA-IIoT-Response",
+     "types": [
+      "OPCUA-IIoT-Response"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-response.js"
+    },
+    "OPCUA-IIoT-Result-Filter": {
+     "name": "OPCUA-IIoT-Result-Filter",
+     "types": [
+      "OPCUA-IIoT-Result-Filter"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-result-filter.js"
+    },
+    "OPCUA-IIoT-Server": {
+     "name": "OPCUA-IIoT-Server",
+     "types": [
+      "OPCUA-IIoT-Server"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-server.js"
+    },
+    "OPCUA-IIoT-Server-ASO": {
+     "name": "OPCUA-IIoT-Server-ASO",
+     "types": [
+      "OPCUA-IIoT-Server-ASO"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-server-aso.js"
+    },
+    "OPCUA-IIoT-Server-Command": {
+     "name": "OPCUA-IIoT-Server-Command",
+     "types": [
+      "OPCUA-IIoT-Server-Command"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-server-cmd.js"
+    },
+    "OPCUA-IIoT-Write": {
+     "name": "OPCUA-IIoT-Write",
+     "types": [
+      "OPCUA-IIoT-Write"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-iiot-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-iiot-opcua/opcuaIIoT/opcua-iiot-write.js"
+    }
+   }
+  },
+  "node-red-contrib-bacnet": {
+   "name": "node-red-contrib-bacnet",
+   "version": "0.1.0",
+   "local": true,
+   "nodes": {
+    "BACnet-Client": {
+     "name": "BACnet-Client",
+     "types": [
+      "BACnet-Client"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-bacnet",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-bacnet/bacnet/bacnet-client.js"
+    },
+    "BACnet-Command": {
+     "name": "BACnet-Command",
+     "types": [
+      "BACnet-Command"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-bacnet",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-bacnet/bacnet/bacnet-command.js"
+    },
+    "BACnet-Device": {
+     "name": "BACnet-Device",
+     "types": [
+      "BACnet-Device"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-bacnet",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-bacnet/bacnet/bacnet-device.js"
+    },
+    "BACnet-Instance": {
+     "name": "BACnet-Instance",
+     "types": [
+      "BACnet-Instance"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-bacnet",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-bacnet/bacnet/bacnet-instance.js"
+    },
+    "BACnet-Read": {
+     "name": "BACnet-Read",
+     "types": [
+      "BACnet-Read"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-bacnet",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-bacnet/bacnet/bacnet-read.js"
+    },
+    "BACnet-Write": {
+     "name": "BACnet-Write",
+     "types": [
+      "BACnet-Write"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-bacnet",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-bacnet/bacnet/bacnet-write.js"
+    }
+   }
+  },
+  "node-red-contrib-modbus": {
+   "name": "node-red-contrib-modbus",
+   "version": "4.0.0",
+   "local": true,
+   "nodes": {
+    "Modbus-Client": {
+     "name": "Modbus-Client",
+     "types": [
+      "modbus-client"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-client.js"
+    },
+    "Modbus-Flex-Connector": {
+     "name": "Modbus-Flex-Connector",
+     "types": [
+      "modbus-flex-connector"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-flex-connector.js"
+    },
+    "Modbus-Flex-Getter": {
+     "name": "Modbus-Flex-Getter",
+     "types": [
+      "modbus-flex-getter"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-flex-getter.js"
+    },
+    "Modbus-Flex-Server": {
+     "name": "Modbus-Flex-Server",
+     "types": [
+      "modbus-flex-server"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-flex-server.js"
+    },
+    "Modbus-Flex-Write": {
+     "name": "Modbus-Flex-Write",
+     "types": [
+      "modbus-flex-write"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-flex-write.js"
+    },
+    "Modbus-Getter": {
+     "name": "Modbus-Getter",
+     "types": [
+      "modbus-getter"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-getter.js"
+    },
+    "Modbus-IO-Config": {
+     "name": "Modbus-IO-Config",
+     "types": [
+      "modbus-io-config"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-io-config.js"
+    },
+    "Modbus-Queue-Info": {
+     "name": "Modbus-Queue-Info",
+     "types": [
+      "modbus-queue-info"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-queue-info.js"
+    },
+    "Modbus-Read": {
+     "name": "Modbus-Read",
+     "types": [
+      "modbus-read"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-read.js"
+    },
+    "Modbus-Response": {
+     "name": "Modbus-Response",
+     "types": [
+      "modbus-response"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-response.js"
+    },
+    "Modbus-Response-Filter": {
+     "name": "Modbus-Response-Filter",
+     "types": [
+      "modbus-response-filter"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-response-filter.js"
+    },
+    "Modbus-Server": {
+     "name": "Modbus-Server",
+     "types": [
+      "modbus-server"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-server.js"
+    },
+    "Modbus-Write": {
+     "name": "Modbus-Write",
+     "types": [
+      "modbus-write"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-modbus",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-modbus/modbus/modbus-write.js"
+    }
+   }
+  },
+  "node-red-dashboard": {
+   "name": "node-red-dashboard",
+   "version": "2.10.1",
+   "local": true,
+   "nodes": {
+    "ui_audio": {
+     "name": "ui_audio",
+     "types": [
+      "ui_audio"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_audio.js"
+    },
+    "ui_base": {
+     "name": "ui_base",
+     "types": [
+      "ui_base"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_base.js"
+    },
+    "ui_button": {
+     "name": "ui_button",
+     "types": [
+      "ui_button"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_button.js"
+    },
+    "ui_chart": {
+     "name": "ui_chart",
+     "types": [
+      "ui_chart"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_chart.js"
+    },
+    "ui_colour_picker": {
+     "name": "ui_colour_picker",
+     "types": [
+      "ui_colour_picker"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_colour_picker.js"
+    },
+    "ui_date_picker": {
+     "name": "ui_date_picker",
+     "types": [
+      "ui_date_picker"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_date_picker.js"
+    },
+    "ui_dropdown": {
+     "name": "ui_dropdown",
+     "types": [
+      "ui_dropdown"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_dropdown.js"
+    },
+    "ui_form": {
+     "name": "ui_form",
+     "types": [
+      "ui_form"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_form.js"
+    },
+    "ui_gauge": {
+     "name": "ui_gauge",
+     "types": [
+      "ui_gauge"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_gauge.js"
+    },
+    "ui_group": {
+     "name": "ui_group",
+     "types": [
+      "ui_group"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_group.js"
+    },
+    "ui_link": {
+     "name": "ui_link",
+     "types": [
+      "ui_link"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_link.js"
+    },
+    "ui_numeric": {
+     "name": "ui_numeric",
+     "types": [
+      "ui_numeric"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_numeric.js"
+    },
+    "ui_slider": {
+     "name": "ui_slider",
+     "types": [
+      "ui_slider"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_slider.js"
+    },
+    "ui_switch": {
+     "name": "ui_switch",
+     "types": [
+      "ui_switch"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_switch.js"
+    },
+    "ui_tab": {
+     "name": "ui_tab",
+     "types": [
+      "ui_tab"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_tab.js"
+    },
+    "ui_template": {
+     "name": "ui_template",
+     "types": [
+      "ui_template"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_template.js"
+    },
+    "ui_text": {
+     "name": "ui_text",
+     "types": [
+      "ui_text"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_text.js"
+    },
+    "ui_text_input": {
+     "name": "ui_text_input",
+     "types": [
+      "ui_text_input"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_text_input.js"
+    },
+    "ui_toast": {
+     "name": "ui_toast",
+     "types": [
+      "ui_toast"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_toast.js"
+    },
+    "ui_ui_control": {
+     "name": "ui_ui_control",
+     "types": [
+      "ui_ui_control"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-dashboard",
+     "file": "/home/harshad/.node-red/node_modules/node-red-dashboard/nodes/ui_ui_control.js"
+    }
+   }
+  },
+  "node-red-contrib-opcua": {
+   "name": "node-red-contrib-opcua",
+   "version": "0.2.32",
+   "local": false,
+   "nodes": {
+    "OpcUa-Browser": {
+     "name": "OpcUa-Browser",
+     "types": [
+      "OpcUa-Browser"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-opcua/opcua/103-opcuabrowser.js"
+    },
+    "OpcUa-Client": {
+     "name": "OpcUa-Client",
+     "types": [
+      "OpcUa-Client"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-opcua/opcua/102-opcuaclient.js"
+    },
+    "OpcUa-Endpoint": {
+     "name": "OpcUa-Endpoint",
+     "types": [
+      "OpcUa-Endpoint"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-opcua/opcua/105-opcuaendpoint.js"
+    },
+    "OpcUa-Event": {
+     "name": "OpcUa-Event",
+     "types": [
+      "OpcUa-Event"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-opcua/opcua/106-opcuaevent.js"
+    },
+    "OpcUa-Item": {
+     "name": "OpcUa-Item",
+     "types": [
+      "OpcUa-Item"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-opcua/opcua/101-opcuaitem.js"
+    },
+    "OpcUa-Server": {
+     "name": "OpcUa-Server",
+     "types": [
+      "OpcUa-Server"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-opcua",
+     "file": "/home/harshad/.node-red/node_modules/node-red-contrib-opcua/opcua/104-opcuaserver.js"
+    }
+   }
+  },
+  "compactcom-40-nodes": {
+   "name": "compactcom-40-nodes",
+   "version": "1.0.1",
+   "local": false,
+   "nodes": {
+    "compactcom-40-module": {
+     "name": "compactcom-40-module",
+     "types": [
+      "compactcom-40-module"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "compactcom-40-nodes",
+     "file": "/home/harshad/.node-red/node_modules/compactcom-40-nodes/compactcom-40-module/compactcom-40-module.js"
+    },
+    "compactcom-40-rest-read": {
+     "name": "compactcom-40-rest-read",
+     "types": [
+      "compactcom-40-rest-read"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "compactcom-40-nodes",
+     "file": "/home/harshad/.node-red/node_modules/compactcom-40-nodes/compactcom-40-rest-read/compactcom-40-rest-read.js"
+    }
+   }
+  }
+ },
+ "_credentialSecret": "096015190e86ef0cbae143f01de071556fe79092cd40276eb96ac597c35f1ed7",
+ "users": {
+  "_": {
+   "editor": {
+    "view": {
+     "view-grid-size": "20",
+     "view-node-status": true,
+     "view-show-tips": true,
+     "view-snap-grid": false,
+     "view-show-grid": false
+    }
+   }
+  }
+ }
+}

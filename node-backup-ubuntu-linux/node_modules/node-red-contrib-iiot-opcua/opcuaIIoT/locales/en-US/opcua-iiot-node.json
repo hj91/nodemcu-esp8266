@@ -1,0 +1,19 @@
+{
+  "opcua-iiot-contrib": {
+    "label": {
+      "nodeId": "Node-Id",
+      "datatype": "Data Type",
+      "value": "Value",
+      "topic": "Topic",
+      "injectType": "Type",
+      "showActivities": "Show Activities",
+      "showErrors": "Show Errors"
+    },
+    "type-label":{
+      "inject": "inject",
+      "read": "read",
+      "write": "write",
+      "listen": "listen"
+    }
+  }
+}

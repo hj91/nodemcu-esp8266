@@ -1,0 +1,205 @@
+[
+  {
+    "id": "62b77fc7.2b70f",
+    "type": "tab",
+    "label": "IIoT OPC UA History Read",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "3d4d0de9.b1dbca",
+    "type": "OPCUA-IIoT-Inject",
+    "z": "62b77fc7.2b70f",
+    "injectType": "read",
+    "payload": "{\"historyStart\":0,\"historyEnd\":0}",
+    "payloadType": "json",
+    "topic": "TestTopicRead2",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "startDelay": "12",
+    "name": "",
+    "addressSpaceItems": [
+      {
+        "name": "",
+        "nodeId": "ns=1;s=free_memory",
+        "datatypeName": ""
+      }
+    ],
+    "x": 130,
+    "y": 140,
+    "wires": [
+      [
+        "13fe8617.ba64fa"
+      ]
+    ]
+  },
+  {
+    "id": "220ff5e2.de5442",
+    "type": "OPCUA-IIoT-Read",
+    "z": "62b77fc7.2b70f",
+    "attributeId": "130",
+    "maxAge": 1,
+    "depth": 1,
+    "connector": "c3117db1.3ba618",
+    "name": "Read History",
+    "justValue": true,
+    "showStatusActivities": false,
+    "showErrors": true,
+    "parseStrings": false,
+    "historyDays": "",
+    "x": 450,
+    "y": 80,
+    "wires": [
+      [
+        "e226a029.634db",
+        "dd5f7dbd.0212b8"
+      ]
+    ]
+  },
+  {
+    "id": "e226a029.634db",
+    "type": "OPCUA-IIoT-Response",
+    "z": "62b77fc7.2b70f",
+    "name": "",
+    "showStatusActivities": false,
+    "showErrors": false,
+    "x": 620,
+    "y": 140,
+    "wires": [
+      [
+        "c9dac953.015e38"
+      ]
+    ]
+  },
+  {
+    "id": "c9dac953.015e38",
+    "type": "debug",
+    "z": "62b77fc7.2b70f",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "x": 790,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "dd5f7dbd.0212b8",
+    "type": "OPCUA-IIoT-Response",
+    "z": "62b77fc7.2b70f",
+    "name": "",
+    "compressStructure": true,
+    "showStatusActivities": false,
+    "showErrors": false,
+    "activateFilters": false,
+    "filters": [],
+    "x": 630,
+    "y": 80,
+    "wires": [
+      [
+        "b8cbcc95.6c655"
+      ]
+    ]
+  },
+  {
+    "id": "b8cbcc95.6c655",
+    "type": "debug",
+    "z": "62b77fc7.2b70f",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "x": 790,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "13fe8617.ba64fa",
+    "type": "function",
+    "z": "62b77fc7.2b70f",
+    "name": "set timeline",
+    "func": "let startDate = new Date()\n\nlet historyStart = new Date()\nhistoryStart.setDate(startDate.getDate() - 2)\n\nlet historyEnd = new Date()\n\nmsg.payload.historyStart = historyStart\nmsg.payload.historyEnd = historyEnd\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 270,
+    "y": 140,
+    "wires": [
+      [
+        "220ff5e2.de5442",
+        "9127f37.884629"
+      ]
+    ]
+  },
+  {
+    "id": "ff6c4fbe.00e9a8",
+    "type": "OPCUA-IIoT-Inject",
+    "z": "62b77fc7.2b70f",
+    "injectType": "read",
+    "payload": "{\"historyStart\":0,\"historyEnd\":0}",
+    "payloadType": "json",
+    "topic": "TestTopicRead1",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "startDelay": "",
+    "name": "",
+    "addressSpaceItems": [
+      {
+        "name": "",
+        "nodeId": "ns=1;s=free_memory",
+        "datatypeName": ""
+      }
+    ],
+    "x": 130,
+    "y": 80,
+    "wires": [
+      [
+        "220ff5e2.de5442"
+      ]
+    ]
+  },
+  {
+    "id": "9127f37.884629",
+    "type": "debug",
+    "z": "62b77fc7.2b70f",
+    "name": "",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "x": 430,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "c3117db1.3ba618",
+    "type": "OPCUA-IIoT-Connector",
+    "z": "62b77fc7.2b70f",
+    "discoveryUrl": "",
+    "endpoint": "opc.tcp://localhost:55388/",
+    "keepSessionAlive": true,
+    "loginEnabled": false,
+    "securityPolicy": "Basic256",
+    "securityMode": "SIGN",
+    "name": "LOCAL HISTORY SERVER",
+    "showErrors": false,
+    "publicCertificateFile": "",
+    "privateKeyFile": "",
+    "defaultSecureTokenLifetime": "60000",
+    "endpointMustExist": false,
+    "autoSelectRightEndpoint": false,
+    "strategyMaxRetry": "",
+    "strategyInitialDelay": "",
+    "strategyMaxDelay": "",
+    "strategyRandomisationFactor": "",
+    "requestedSessionTimeout": "",
+    "connectionStartDelay": "",
+    "reconnectDelay": ""
+  }
+]
