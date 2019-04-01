@@ -1,0 +1,1046 @@
+[
+    {
+        "id": "fa076de0.4af0c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7918e869.098ea8",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Temperature",
+        "topic": "ns=2;s=Painting.Oven.Temperature;datatype=Float",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 156,
+        "y": 90,
+        "wires": [
+            [
+                "c8bdd4c7.348da8"
+            ]
+        ]
+    },
+    {
+        "id": "c8bdd4c7.348da8",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 343,
+        "y": 90,
+        "wires": [
+            [
+                "aad37b05.0539b8",
+                "7cdfe6c7.f96348"
+            ]
+        ]
+    },
+    {
+        "id": "32ffb66.120e54a",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Temperature",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1166,
+        "y": 119,
+        "wires": []
+    },
+    {
+        "id": "7fe6d569.69572c",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Fan",
+        "topic": "ns=2;s=Painting.Oven.Fan;datatype=Float",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 184,
+        "y": 145,
+        "wires": [
+            [
+                "d43c9752.16d1a8"
+            ]
+        ]
+    },
+    {
+        "id": "d43c9752.16d1a8",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 343,
+        "y": 145,
+        "wires": [
+            [
+                "e951f559.2b6298"
+            ]
+        ]
+    },
+    {
+        "id": "1c5fe56f.ef852b",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Fan",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1147,
+        "y": 158,
+        "wires": []
+    },
+    {
+        "id": "419a9d14.b17b94",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Pressure",
+        "topic": "ns=2;s=Painting.Oven.Pressure;datatype=Float",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 163,
+        "y": 198,
+        "wires": [
+            [
+                "c7839f34.c60fd"
+            ]
+        ]
+    },
+    {
+        "id": "c7839f34.c60fd",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 343,
+        "y": 198,
+        "wires": [
+            [
+                "7be1e471.4ab5bc"
+            ]
+        ]
+    },
+    {
+        "id": "ef08f6d2.346698",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Pressure",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1155,
+        "y": 194,
+        "wires": []
+    },
+    {
+        "id": "aad37b05.0539b8",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 492,
+        "y": 90,
+        "wires": [
+            [
+                "d2d8945.b66cf68"
+            ]
+        ]
+    },
+    {
+        "id": "e951f559.2b6298",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 493,
+        "y": 145,
+        "wires": [
+            [
+                "bdaad54.181fe28"
+            ]
+        ]
+    },
+    {
+        "id": "7be1e471.4ab5bc",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 493,
+        "y": 198,
+        "wires": [
+            [
+                "b2cd1968.c1aee8"
+            ]
+        ]
+    },
+    {
+        "id": "cdb02ebe.333d7",
+        "type": "comment",
+        "z": "fa076de0.4af0c",
+        "name": "Paint oven data from OPC simulation server",
+        "info": "",
+        "x": 197,
+        "y": 47,
+        "wires": []
+    },
+    {
+        "id": "98e01c5d.ca3af",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Tank1",
+        "topic": "ns=2;s=Painting.Tank.Tank1;datatype=Float",
+        "payload": "null",
+        "payloadType": "str",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 171,
+        "y": 305,
+        "wires": [
+            [
+                "a056bbea.6cf048"
+            ]
+        ]
+    },
+    {
+        "id": "a056bbea.6cf048",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 343,
+        "y": 305,
+        "wires": [
+            [
+                "601996e1.fe9088",
+                "7cdfe6c7.f96348"
+            ]
+        ]
+    },
+    {
+        "id": "e76af3bf.d126",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Tank 1",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1150,
+        "y": 310,
+        "wires": []
+    },
+    {
+        "id": "30dae2f0.9c374e",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Tank2",
+        "topic": "ns=2;s=Painting.Tank.Tank2;datatype=Float",
+        "payload": "null",
+        "payloadType": "str",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 172,
+        "y": 360,
+        "wires": [
+            [
+                "87b806a0.894038"
+            ]
+        ]
+    },
+    {
+        "id": "87b806a0.894038",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 343,
+        "y": 360,
+        "wires": [
+            [
+                "ef761013.8c236"
+            ]
+        ]
+    },
+    {
+        "id": "43a9bdea.525aa4",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Tank 2",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1151,
+        "y": 345,
+        "wires": []
+    },
+    {
+        "id": "8b05849e.9db608",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Tank3",
+        "topic": "ns=2;s=Painting.Tank.Tank3;datatype=Float",
+        "payload": "null",
+        "payloadType": "str",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 171,
+        "y": 413,
+        "wires": [
+            [
+                "9664f2bd.fafa8"
+            ]
+        ]
+    },
+    {
+        "id": "9664f2bd.fafa8",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 343,
+        "y": 413,
+        "wires": [
+            [
+                "26be8554.7bc9ca"
+            ]
+        ]
+    },
+    {
+        "id": "86d23937.dfb0c8",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Tank 3",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1152,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "601996e1.fe9088",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 492,
+        "y": 305,
+        "wires": [
+            [
+                "469d2fff.cef19"
+            ]
+        ]
+    },
+    {
+        "id": "ef761013.8c236",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 493,
+        "y": 360,
+        "wires": [
+            [
+                "3236bb8d.9bb784"
+            ]
+        ]
+    },
+    {
+        "id": "26be8554.7bc9ca",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 493,
+        "y": 413,
+        "wires": [
+            [
+                "a9e943ba.dbf1e"
+            ]
+        ]
+    },
+    {
+        "id": "a13182d2.51b57",
+        "type": "comment",
+        "z": "fa076de0.4af0c",
+        "name": "Paint tank data from OPC simulation server",
+        "info": "",
+        "x": 210,
+        "y": 256,
+        "wires": []
+    },
+    {
+        "id": "832b5809.c50d68",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Sprayer1",
+        "topic": "ns=2;s=Painting.Sprayer.Sprayer1;datatype=Int32",
+        "payload": "null",
+        "payloadType": "str",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 161,
+        "y": 522,
+        "wires": [
+            [
+                "76bfb2a9.d432fc"
+            ]
+        ]
+    },
+    {
+        "id": "76bfb2a9.d432fc",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 340,
+        "y": 522,
+        "wires": [
+            [
+                "31d777d9.573598",
+                "7cdfe6c7.f96348"
+            ]
+        ]
+    },
+    {
+        "id": "84059ee3.9e178",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Sprayer 1",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1168,
+        "y": 528,
+        "wires": []
+    },
+    {
+        "id": "ab879cb2.d00b6",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Sprayer2",
+        "topic": "ns=2;s=Painting.Sprayer.Sprayer2;datatype=Int32",
+        "payload": "null",
+        "payloadType": "str",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 163,
+        "y": 577,
+        "wires": [
+            [
+                "e7d58f90.c75ec"
+            ]
+        ]
+    },
+    {
+        "id": "e7d58f90.c75ec",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 340,
+        "y": 577,
+        "wires": [
+            [
+                "6b7320d0.85b25"
+            ]
+        ]
+    },
+    {
+        "id": "bc3c5be1.20a148",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Sprayer 2",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1169,
+        "y": 562,
+        "wires": []
+    },
+    {
+        "id": "3c5c6cd0.2ece54",
+        "type": "inject",
+        "z": "fa076de0.4af0c",
+        "name": "Poll Sprayer3",
+        "topic": "ns=2;s=Painting.Sprayer.Sprayer3;datatype=Int32",
+        "payload": "null",
+        "payloadType": "str",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 164,
+        "y": 630,
+        "wires": [
+            [
+                "cb1851a.97328b"
+            ]
+        ]
+    },
+    {
+        "id": "cb1851a.97328b",
+        "type": "OpcUa-Client",
+        "z": "fa076de0.4af0c",
+        "endpoint": "9f8251ab.4fcdf",
+        "action": "read",
+        "time": "5",
+        "timeUnit": "s",
+        "name": "OPC Read",
+        "x": 340,
+        "y": 630,
+        "wires": [
+            [
+                "91a15d96.78ae3"
+            ]
+        ]
+    },
+    {
+        "id": "659fceab.7ede4",
+        "type": "debug",
+        "z": "fa076de0.4af0c",
+        "name": "Sprayer 3",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1170,
+        "y": 597,
+        "wires": []
+    },
+    {
+        "id": "31d777d9.573598",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 489,
+        "y": 522,
+        "wires": [
+            [
+                "7d853bcd.379734"
+            ]
+        ]
+    },
+    {
+        "id": "6b7320d0.85b25",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 490,
+        "y": 577,
+        "wires": [
+            [
+                "7bb28160.41738"
+            ]
+        ]
+    },
+    {
+        "id": "91a15d96.78ae3",
+        "type": "switch",
+        "z": "fa076de0.4af0c",
+        "name": "Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "null",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 490,
+        "y": 630,
+        "wires": [
+            [
+                "8006510c.e3cae"
+            ]
+        ]
+    },
+    {
+        "id": "2a9bf6.f10d240a",
+        "type": "comment",
+        "z": "fa076de0.4af0c",
+        "name": "Paint sprayer data from OPC simulation server",
+        "info": "",
+        "x": 217,
+        "y": 473,
+        "wires": []
+    },
+    {
+        "id": "af66887e.2aa728",
+        "type": "mqtt out",
+        "z": "fa076de0.4af0c",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "d2dbcc95.c17ba",
+        "x": 1147,
+        "y": 261,
+        "wires": []
+    },
+    {
+        "id": "d2d8945.b66cf68",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/oven/temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "/oven/temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 721,
+        "y": 90,
+        "wires": [
+            [
+                "32ffb66.120e54a",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "bdaad54.181fe28",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/oven/fan",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/oven/fan",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 691,
+        "y": 145,
+        "wires": [
+            [
+                "1c5fe56f.ef852b",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "b2cd1968.c1aee8",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/oven/pressure",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/oven/pressure",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 713,
+        "y": 198,
+        "wires": [
+            [
+                "ef08f6d2.346698",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "469d2fff.cef19",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/tank1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/tank1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 682,
+        "y": 306,
+        "wires": [
+            [
+                "e76af3bf.d126",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "3236bb8d.9bb784",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/tank2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/tank2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 685,
+        "y": 358,
+        "wires": [
+            [
+                "43a9bdea.525aa4",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "a9e943ba.dbf1e",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/tank3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/tank3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 687,
+        "y": 412,
+        "wires": [
+            [
+                "86d23937.dfb0c8",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "7d853bcd.379734",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/sprayer1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/sprayer1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 697,
+        "y": 520,
+        "wires": [
+            [
+                "84059ee3.9e178",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "7bb28160.41738",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/sprayer2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/sprayer2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 698,
+        "y": 577,
+        "wires": [
+            [
+                "bc3c5be1.20a148",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "8006510c.e3cae",
+        "type": "change",
+        "z": "fa076de0.4af0c",
+        "name": "users/{Your user name}/sprayer3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "users/{Your user name}/sprayer3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 630,
+        "wires": [
+            [
+                "659fceab.7ede4",
+                "af66887e.2aa728"
+            ]
+        ]
+    },
+    {
+        "id": "7cdfe6c7.f96348",
+        "type": "ui_chart",
+        "z": "fa076de0.4af0c",
+        "name": "",
+        "group": "9c62bd88.34842",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 597,
+        "y": 31,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9f8251ab.4fcdf",
+        "type": "OpcUa-Endpoint",
+        "z": "fa076de0.4af0c",
+        "endpoint": "opc.tcp://192.168.1.10:49320/KEPServerEX",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "d2dbcc95.c17ba",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "9c62bd88.34842",
+        "type": "ui_group",
+        "z": "",
+        "name": "SDM120 Energy Meter at Harshad's Home",
+        "tab": "677026c0.55a6c8",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "677026c0.55a6c8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Modbus",
+        "icon": "memory",
+        "order": 15
+    }
+]
