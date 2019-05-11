@@ -1,0 +1,300 @@
+[
+    {
+        "id": "41da91f8.ccc64",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f1f34018.49594",
+        "type": "modbustcp-read",
+        "z": "41da91f8.ccc64",
+        "name": "esp8266_dht",
+        "topic": "",
+        "dataType": "HoldingRegister",
+        "adr": "11",
+        "quantity": "6",
+        "rate": "4",
+        "rateUnit": "s",
+        "server": "846dafce.73674",
+        "ieeeType": "off",
+        "ieeeBE": true,
+        "x": 328,
+        "y": 230,
+        "wires": [
+            [
+                "418b6685.e4a738"
+            ]
+        ]
+    },
+    {
+        "id": "bfbcbabe.546b58",
+        "type": "debug",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1077.5,
+        "y": 291,
+        "wires": []
+    },
+    {
+        "id": "418b6685.e4a738",
+        "type": "split",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "splt": "[44]",
+        "spltType": "bin",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 492.5,
+        "y": 168,
+        "wires": [
+            [
+                "b9297a3f.2ef5f8",
+                "2d2c5e26.d38ab2"
+            ]
+        ]
+    },
+    {
+        "id": "b9297a3f.2ef5f8",
+        "type": "switch",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "index",
+                "v": "0",
+                "vt": "num",
+                "v2": "2",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 674.5,
+        "y": 149,
+        "wires": [
+            [
+                "b1f215a0.c32288"
+            ]
+        ]
+    },
+    {
+        "id": "b1f215a0.c32288",
+        "type": "switch",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "index",
+                "v": "2",
+                "vt": "num",
+                "v2": "2",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 876,
+        "y": 138,
+        "wires": [
+            [
+                "6b0acc29.3f4344",
+                "43eac6bf.b2cfe8"
+            ]
+        ]
+    },
+    {
+        "id": "6b0acc29.3f4344",
+        "type": "debug",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1125,
+        "y": 110,
+        "wires": []
+    },
+    {
+        "id": "2d2c5e26.d38ab2",
+        "type": "switch",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "index",
+                "v": "2",
+                "vt": "num",
+                "v2": "5",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 657,
+        "y": 261,
+        "wires": [
+            [
+                "a688066b.c9e0b8"
+            ]
+        ]
+    },
+    {
+        "id": "a688066b.c9e0b8",
+        "type": "switch",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "index",
+                "v": "5",
+                "vt": "num",
+                "v2": "5",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 847,
+        "y": 282,
+        "wires": [
+            [
+                "bfbcbabe.546b58",
+                "79800a3f.e7b064"
+            ]
+        ]
+    },
+    {
+        "id": "43eac6bf.b2cfe8",
+        "type": "ui_chart",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "group": "db95e5fd.c14f38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "RH",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1128,
+        "y": 181,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79800a3f.e7b064",
+        "type": "ui_chart",
+        "z": "41da91f8.ccc64",
+        "name": "",
+        "group": "db95e5fd.c14f38",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1037,
+        "y": 372,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "846dafce.73674",
+        "type": "modbustcp-server",
+        "z": "",
+        "name": "esp8266_DHT",
+        "host": "192.168.1.2",
+        "port": "502",
+        "unit_id": "1",
+        "reconnecttimeout": ""
+    },
+    {
+        "id": "db95e5fd.c14f38",
+        "type": "ui_group",
+        "z": "",
+        "name": "Modbus Test",
+        "tab": "eb5a65d4.f485e8",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "eb5a65d4.f485e8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Modbus",
+        "icon": "dashboard"
+    }
+]
