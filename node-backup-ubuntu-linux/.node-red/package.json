@@ -8,6 +8,6 @@
     "node-red-contrib-bacnet": "~0.1.0",
     "node-red-contrib-modbus": "~4.0.0",
     "node-red-contrib-opcua": "~0.2.32",
-    "node-red-dashboard": "~2.10.1"
+    "node-red-dashboard": "~2.19.4"
   }
 }
