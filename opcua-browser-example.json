@@ -1,0 +1,103 @@
+[
+    {
+        "id": "f8a80e35.b3a31",
+        "type": "tab",
+        "label": "OPCUA browser",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "19e20541.e597db",
+        "type": "ui_template",
+        "z": "f8a80e35.b3a31",
+        "group": "d9db38f1.8a2d58",
+        "name": "Browse",
+        "order": 0,
+        "width": "6",
+        "height": "11",
+        "format": "<div layout=\"row\" layout-align=\"space-between\">\n    <select ng-model=\"item\" ng-options=\"items.item.displayName.text for items in msg.payload\">\n        <option value=\"\">-- Objects Root --</option>\n    </select>\n    <button ng-click=\"send({payload: {actiontype: 'browse', root: item}})\">\n        Browse\n    </button>\n</div>\n<div layout=\"row\" layout-align=\"space-between\">\n    <ul>\n        <li ng-repeat=\"items in msg.payload\">\n          {{items.item.displayName.text}}: {{items.item.nodeId}}\n        </li>\n    </ul>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 250.49998474121094,
+        "y": 81.80000305175781,
+        "wires": [
+            [
+                "f8ab2ff5.23479",
+                "2dc57199.ea91ee"
+            ]
+        ]
+    },
+    {
+        "id": "f8ab2ff5.23479",
+        "type": "ui_toast",
+        "z": "f8a80e35.b3a31",
+        "position": "top right",
+        "displayTime": "2",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Browsing...",
+        "name": "Action",
+        "x": 471.49998474121094,
+        "y": 82.59999084472656,
+        "wires": []
+    },
+    {
+        "id": "2dc57199.ea91ee",
+        "type": "OpcUa-Browser",
+        "z": "f8a80e35.b3a31",
+        "endpoint": "79301071.d5eed",
+        "item": "",
+        "datatype": "",
+        "topic": "",
+        "items": [],
+        "x": 250.9000244140625,
+        "y": 187.40000915527344,
+        "wires": [
+            [
+                "19e20541.e597db"
+            ]
+        ]
+    },
+    {
+        "id": "5cd21dc6.074994",
+        "type": "comment",
+        "z": "f8a80e35.b3a31",
+        "name": "OPCUA Browser Node",
+        "info": "Use OPCUA brower node to find out opcua tags running\nOPCUA server, in this case Kepware OPCUA server",
+        "x": 140,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d9db38f1.8a2d58",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "a7961ab3.daa458",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "79301071.d5eed",
+        "type": "OpcUa-Endpoint",
+        "z": "",
+        "endpoint": "opc.tcp://192.168.1.6:49320/KEPServerEX",
+        "secpol": "None",
+        "secmode": "None",
+        "login": false
+    },
+    {
+        "id": "a7961ab3.daa458",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
