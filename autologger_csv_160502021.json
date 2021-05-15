@@ -1,0 +1,331 @@
+[
+    {
+        "id": "79bc531c.1ff28c",
+        "type": "delay",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 680,
+        "y": 380,
+        "wires": [
+            [
+                "76b44e4d.ec597"
+            ]
+        ]
+    },
+    {
+        "id": "692e5b89.63cd14",
+        "type": "comment",
+        "z": "ea9890a.e61ed7",
+        "name": "Auto Logger",
+        "info": "",
+        "x": 150,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "431f43fe.47ab2c",
+        "type": "function",
+        "z": "ea9890a.e61ed7",
+        "name": "Set data",
+        "func": "var now = new Date();\n\nmsg.payload = {\n    \"timestamp\" : now.getTime(),\n    \"temperature\" : msg.payload[0],\n    \"humidity\" : msg.payload[1]\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 520,
+        "y": 540,
+        "wires": [
+            [
+                "4bb322c3.b8ac4c",
+                "d3b470d.105679"
+            ]
+        ]
+    },
+    {
+        "id": "4bb322c3.b8ac4c",
+        "type": "function",
+        "z": "ea9890a.e61ed7",
+        "name": "Filename generator",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"harshad_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"/home/harshad/datalog/\"+ msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 720,
+        "wires": [
+            [
+                "927cd536.0ee3b8"
+            ]
+        ]
+    },
+    {
+        "id": "5665131f.feab3c",
+        "type": "debug",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "active": false,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "a97f72db.242e6",
+        "type": "switch",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "property": "$count(msg.payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 720,
+        "wires": [
+            [
+                "595c50b2.9d44c"
+            ],
+            [
+                "9934ee0d.36647"
+            ]
+        ]
+    },
+    {
+        "id": "db30f648.7a9f58",
+        "type": "csv",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": true,
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "timestamp,temperature,humidity",
+        "skip": "0",
+        "x": 990,
+        "y": 700,
+        "wires": [
+            [
+                "c7a83d6c.07599"
+            ]
+        ]
+    },
+    {
+        "id": "c7a83d6c.07599",
+        "type": "file",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "filename": "",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1150,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c60f3db5.69e29",
+        "type": "csv",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": false,
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "timestamp,temperature,humidity",
+        "skip": "0",
+        "x": 990,
+        "y": 740,
+        "wires": [
+            [
+                "c7a83d6c.07599"
+            ]
+        ]
+    },
+    {
+        "id": "595c50b2.9d44c",
+        "type": "change",
+        "z": "ea9890a.e61ed7",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 700,
+        "wires": [
+            [
+                "db30f648.7a9f58"
+            ]
+        ]
+    },
+    {
+        "id": "9934ee0d.36647",
+        "type": "change",
+        "z": "ea9890a.e61ed7",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 740,
+        "wires": [
+            [
+                "c60f3db5.69e29"
+            ]
+        ]
+    },
+    {
+        "id": "927cd536.0ee3b8",
+        "type": "fs-file-lister",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "start": "/home/harshad/datalog/",
+        "pattern": "",
+        "folders": "*",
+        "hidden": true,
+        "lstype": "files",
+        "path": true,
+        "single": true,
+        "depth": 0,
+        "stat": true,
+        "showWarnings": false,
+        "x": 500,
+        "y": 720,
+        "wires": [
+            [
+                "5665131f.feab3c",
+                "a97f72db.242e6"
+            ]
+        ]
+    },
+    {
+        "id": "ea66415b.acce7",
+        "type": "inject",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 70,
+        "y": 520,
+        "wires": [
+            [
+                "960559b.bd1a4a8"
+            ]
+        ]
+    },
+    {
+        "id": "fdc023ab.65534",
+        "type": "inject",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "960559b.bd1a4a8"
+            ]
+        ]
+    },
+    {
+        "id": "960559b.bd1a4a8",
+        "type": "join",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 390,
+        "y": 460,
+        "wires": [
+            [
+                "431f43fe.47ab2c"
+            ]
+        ]
+    },
+    {
+        "id": "d3b470d.105679",
+        "type": "debug",
+        "z": "ea9890a.e61ed7",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 770,
+        "y": 480,
+        "wires": []
+    }
+]
