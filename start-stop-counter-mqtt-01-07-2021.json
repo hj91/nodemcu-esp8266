@@ -1,0 +1,372 @@
+[
+    {
+        "id": "8163aecf.eaaa",
+        "type": "tab",
+        "label": "mqtt machine on off",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8dc6ac2.154dc5",
+        "type": "mqtt in",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "topic": "esp8266/machineOn",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "45d57805.32a478",
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "b7798c7f.b99fd",
+                "6c74f781.04fb98",
+                "dec3e666.0e5fd8",
+                "27c1c03d.25a3f"
+            ]
+        ]
+    },
+    {
+        "id": "b7798c7f.b99fd",
+        "type": "debug",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 550,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "dec3e666.0e5fd8",
+        "type": "function",
+        "z": "8163aecf.eaaa",
+        "name": "status on",
+        "func": "if (msg.payload == \"Machine stopped\") {\n    flow.set(\"counter\",0);\n    \n}\n\n\nflow.set(\"status\",msg.payload);",
+        "outputs": 0,
+        "noerr": 0,
+        "x": 880,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ea349056.d160f",
+        "type": "inject",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "x": 700,
+        "y": 990,
+        "wires": [
+            [
+                "750f3e6.96390c"
+            ]
+        ]
+    },
+    {
+        "id": "750f3e6.96390c",
+        "type": "function",
+        "z": "8163aecf.eaaa",
+        "name": "counter",
+        "func": "var status = flow.get(\"status\")  || \"stop\";\n//var status2 = flow.get(\"status\") || \"log\";\nvar count  = flow.get(\"counter\") || 0;\n\nif (status == \"run\"){\n    count = count + 1;\n}\n\n\n//if (status2 == \"log\"){\n//     msg = count;\n//}\n\n\nflow.set(\"counter\",count);\nmsg.payload = count;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 841,
+        "y": 920,
+        "wires": [
+            [
+                "1d29876b.db9e89",
+                "af054485.139db8"
+            ]
+        ]
+    },
+    {
+        "id": "af054485.139db8",
+        "type": "debug",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1011,
+        "y": 983,
+        "wires": []
+    },
+    {
+        "id": "1d29876b.db9e89",
+        "type": "debug",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1201,
+        "y": 941,
+        "wires": []
+    },
+    {
+        "id": "d80490bd.b9e4f",
+        "type": "inject",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "x": 310,
+        "y": 640,
+        "wires": [
+            [
+                "f9770775.32b5a8",
+                "87765352.a32cd"
+            ]
+        ]
+    },
+    {
+        "id": "f9770775.32b5a8",
+        "type": "function",
+        "z": "8163aecf.eaaa",
+        "name": "on counter",
+        "func": "var status = flow.get(\"status\")  || \"Machine stopped\";\nvar count  = flow.get(\"counter\") || 0;\n\nif (status == \"Machine started\"){\n    count = count + 1;\n}\n\n\n\nflow.set(\"counter\",count);\nmsg.payload = count;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 560,
+        "wires": [
+            [
+                "1357d767.4b55b9",
+                "590fd6f1.9f9398",
+                "a96fcd9c.d286c"
+            ]
+        ]
+    },
+    {
+        "id": "590fd6f1.9f9398",
+        "type": "debug",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 690,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "1357d767.4b55b9",
+        "type": "debug",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 690,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6c74f781.04fb98",
+        "type": "change",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "Machine started",
+                "fromt": "str",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "Machine stopped",
+                "fromt": "str",
+                "to": "2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 240,
+        "wires": [
+            [
+                "9ba6eacf.8ed3b8"
+            ]
+        ]
+    },
+    {
+        "id": "9ba6eacf.8ed3b8",
+        "type": "debug",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 750,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "1e60686a.884d58",
+        "type": "comment",
+        "z": "8163aecf.eaaa",
+        "name": "Start - Stop from peizo sensor status obtained from mqtt for machine start stop condition",
+        "info": "Using mqtt to get message of machine started and machine stopped ",
+        "x": 320,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a96fcd9c.d286c",
+        "type": "ui_text",
+        "z": "8163aecf.eaaa",
+        "group": "d80e85a6.ff6238",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Machine on (Seconds)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1020,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "87765352.a32cd",
+        "type": "function",
+        "z": "8163aecf.eaaa",
+        "name": "off counter",
+        "func": "var status = flow.get(\"status\")  || \"Machine stopped\";\nvar count  = flow.get(\"counter2\") || 0;\n\nif (status == \"Machine stopped\"){\n    count = count + 1;\n}\n\n\n\nflow.set(\"counter2\",count);\nmsg.payload = count;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 420,
+        "wires": [
+            [
+                "da5d9174.88ae3",
+                "b9d67a2e.e28d98"
+            ]
+        ]
+    },
+    {
+        "id": "da5d9174.88ae3",
+        "type": "debug",
+        "z": "8163aecf.eaaa",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 550,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "27c1c03d.25a3f",
+        "type": "function",
+        "z": "8163aecf.eaaa",
+        "name": "status off",
+        "func": "if (msg.payload == \"Machine started\") {\n    flow.set(\"counter2\",0);\n}\n\n\nflow.set(\"status2\",msg.payload);",
+        "outputs": 0,
+        "noerr": 0,
+        "x": 920,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b9d67a2e.e28d98",
+        "type": "ui_text",
+        "z": "8163aecf.eaaa",
+        "group": "d80e85a6.ff6238",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Machine off (Seconds)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 760,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "45d57805.32a478",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "opcua/relayon",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "ns=1;s=Control Relay number 0.",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "d80e85a6.ff6238",
+        "type": "ui_group",
+        "name": "Current Value",
+        "tab": "dd760415.2bec28",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "dd760415.2bec28",
+        "type": "ui_tab",
+        "name": "Auto Select Reasons",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
