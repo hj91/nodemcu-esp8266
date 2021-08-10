@@ -1,0 +1,108 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class OperationLimits {
+    constructor(options) {
+        /**
+         * @property maxNodesPerRead
+         * @default 0
+         */
+        this.maxNodesPerRead = options.maxNodesPerRead || 0;
+        /**
+         * @property maxNodesPerWrite
+         * @default 0
+         */
+        this.maxNodesPerWrite = options.maxNodesPerWrite || 0;
+        /**
+         * @property maxNodesPerMethodCall
+         * @default 0
+         */
+        this.maxNodesPerMethodCall = options.maxNodesPerMethodCall || 0;
+        /**
+         * @property maxNodesPerBrowse
+         * @default 0
+         */
+        this.maxNodesPerBrowse = options.maxNodesPerBrowse || 0;
+        /**
+         * @property maxNodesPerRegisterNodes
+         * @default 0
+         */
+        this.maxNodesPerRegisterNodes = options.maxNodesPerRegisterNodes || 0;
+        /**
+         * @property maxNodesPerNodeManagement
+         * @default 0
+         */
+        this.maxNodesPerNodeManagement = options.maxNodesPerNodeManagement || 0;
+        /**
+         * @property maxMonitoredItemsPerCall
+         * @default 0
+         */
+        this.maxMonitoredItemsPerCall = options.maxMonitoredItemsPerCall || 0;
+        /**
+         * @property maxNodesPerHistoryReadData
+         */
+        this.maxNodesPerHistoryReadData = options.maxNodesPerHistoryReadData || 0;
+        /**
+         * @property maxNodesPerHistoryReadEvents
+         * @default 0
+         */
+        this.maxNodesPerHistoryReadEvents = options.maxNodesPerHistoryReadEvents || 0;
+        /**
+         * @property maxNodesPerHistoryUpdateData
+         * @default 0
+         */
+        this.maxNodesPerHistoryUpdateData = options.maxNodesPerHistoryUpdateData || 0;
+        /**
+         * @property maxNodesPerHistoryUpdateEvents
+         * @default 0
+         */
+        this.maxNodesPerHistoryUpdateEvents = options.maxNodesPerHistoryUpdateEvents || 0;
+        /**
+         * @property maxNodesPerTranslateBrowsePathsToNodeIds
+         * @default 0
+         */
+        this.maxNodesPerTranslateBrowsePathsToNodeIds = options.maxNodesPerTranslateBrowsePathsToNodeIds || 0;
+    }
+}
+exports.OperationLimits = OperationLimits;
+/**
+ */
+class ServerCapabilities {
+    constructor(options) {
+        options = options || {};
+        options.operationLimits = options.operationLimits || {};
+        this.serverProfileArray = options.serverProfileArray || [];
+        this.localeIdArray = options.localeIdArray || [];
+        this.softwareCertificates = options.softwareCertificates || [];
+        /**
+         * @property maxArrayLength
+         */
+        this.maxArrayLength = options.maxArrayLength || 0;
+        /**
+         * @property maxStringLength
+         */
+        this.maxStringLength = options.maxStringLength || 0;
+        /**
+         * @property maxByteStringLength
+         */
+        this.maxByteStringLength = options.maxByteStringLength || 0;
+        /**
+         * @property maxBrowseContinuationPoints
+         */
+        this.maxBrowseContinuationPoints = options.maxBrowseContinuationPoints || 0;
+        /**
+         * @property maxQueryContinuationPoints
+         */
+        this.maxQueryContinuationPoints = options.maxQueryContinuationPoints || 0;
+        /**
+         * @property maxHistoryContinuationPoints
+         */
+        this.maxHistoryContinuationPoints = options.maxHistoryContinuationPoints || 0;
+        /**
+         * @property operationLimits
+         */
+        this.operationLimits = new OperationLimits(options.operationLimits);
+        this.minSupportedSampleRate = 100; // to do adjust me
+    }
+}
+exports.ServerCapabilities = ServerCapabilities;
+//# sourceMappingURL=server_capabilities.js.map

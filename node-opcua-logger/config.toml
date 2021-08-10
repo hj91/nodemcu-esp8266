@@ -1,0 +1,59 @@
+# The OPCUA connection parameters. If you want to use anonymous auth, 
+# remove the username and password lines.
+[opcua]
+url             = "opc.tcp://192.168.1.3:49320/KEPServerEX"
+#user            = "test"
+#pass            = "test1"
+
+# The InfluxDB connection parameters. Use a connection url containing all 
+# details, ie. http(s)://user:password@host:port/database
+[influx]
+url              = "http://harshad:harshad@localhost:8086/opcuafromcli"
+writeInterval    = 1000          # optional. defaults to 1000ms
+writeMaxPoints   = 1000          # optional. defaults to 1000 points
+
+# For each metrics you want to collect, add a [[metrics]] object.
+[[metrics]]
+measurement        = "polled1"
+datatype           = "number"
+#tags               = { simulation = "true", location = "ghent" }
+nodeId             = "ns=2;s=Painting.Oven.Temperature"
+method             = "polled"
+interval           = 1000     
+
+[[metrics]]
+measurement        = "polled2"
+datatype           = "number"
+nodeId             = "ns=2;s=Painting.Oven.Pressure"
+method             = "polled"
+interval           = 1000
+
+[[metrics]]
+measurement        = "polled3"
+datatype           = "number"
+nodeId             = "ns=2;s=Painting.Sprayer.Sprayer1"
+method             = "polled"
+interval           = 1000
+	
+[[metrics]]
+measurement        = "polled4"
+datatype           = "number"
+nodeId             = "ns=2;s=Painting.Sprayer.Sprayer2"
+method             = "polled"
+interval           = 1000
+
+[[metrics]]
+measurement        = "polled5"
+datatype           = "number"
+nodeId             = "ns=2;s=Painting.Sprayer.Sprayer3"
+method             = "polled"
+interval           = 1000
+
+
+#[[metrics]]
+#measurement        = "monitored2"
+#datatype           = "number"
+#tags               = { simulation = "true", location = "ghent" }
+#nodeId             = "ns=23;s=3"
+#method             = "monitored"
+#interval           = 5000  

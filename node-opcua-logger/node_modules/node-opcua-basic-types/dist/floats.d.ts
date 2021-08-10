@@ -1,0 +1,13 @@
+import { BinaryStream, OutputBinaryStream } from "node-opcua-binary-stream";
+export declare function isValidFloat(value: any): boolean;
+export declare type Float = number;
+export declare function randomFloat(): Float;
+export declare function encodeFloat(value: Float, stream: OutputBinaryStream): void;
+export declare function decodeFloat(stream: BinaryStream): Float;
+export declare function isValidDouble(value: any): boolean;
+export declare type Double = number;
+export declare function randomDouble(): Double;
+export declare function encodeDouble(value: Double, stream: OutputBinaryStream): void;
+export declare function decodeDouble(stream: BinaryStream): number;
+export declare function coerceFloat(value: any): Float;
+export declare function coerceDouble(value: any): Double;

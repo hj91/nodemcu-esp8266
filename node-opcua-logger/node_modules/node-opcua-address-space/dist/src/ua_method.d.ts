@@ -1,0 +1,30 @@
+import { AttributeIds } from "node-opcua-data-model";
+import { NodeClass } from "node-opcua-data-model";
+import { DataValue } from "node-opcua-data-value";
+import { NodeId } from "node-opcua-nodeid";
+import { Argument } from "node-opcua-service-call";
+import { CallMethodResultOptions } from "node-opcua-types";
+import { VariantLike } from "node-opcua-variant";
+import { MethodFunctor, MethodFunctorCallback, UAMethod as UAMethodPublic, UAObject as UAObjectPublic, UAObjectType } from "../source";
+import { SessionContext } from "../source";
+import { BaseNode } from "./base_node";
+export declare class UAMethod extends BaseNode implements UAMethodPublic {
+    static checkValidArgument(args: any): boolean;
+    readonly nodeClass = NodeClass.Method;
+    readonly typeDefinitionObj: UAObjectType;
+    readonly parent: UAObjectPublic | null;
+    value?: any;
+    methodDeclarationId: NodeId;
+    _getExecutableFlag?: (this: UAMethod, context: SessionContext) => boolean;
+    _asyncExecutionFunction?: MethodFunctor;
+    constructor(options: any);
+    getExecutableFlag(context: SessionContext): boolean;
+    readAttribute(context: SessionContext, attributeId: AttributeIds): DataValue;
+    getInputArguments(): Argument[];
+    getOutputArguments(): Argument[];
+    bindMethod(async_func: MethodFunctor): void;
+    execute(inputArguments: null | VariantLike[], context: SessionContext): Promise<CallMethodResultOptions>;
+    execute(inputArguments: null | VariantLike[], context: SessionContext, callback: MethodFunctorCallback): void;
+    clone(options: any, optionalFilter: any, extraInfo: any): UAMethodPublic;
+    private _getArguments;
+}

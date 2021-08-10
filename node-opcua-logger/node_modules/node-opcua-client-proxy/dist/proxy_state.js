@@ -1,0 +1,27 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class ProxyState {
+    constructor(proxyNode) {
+        Object.defineProperty(this, "_node", { value: proxyNode, enumerable: false });
+    }
+    get browseName() {
+        return this._node.browseName.toString();
+    }
+    get stateNumber() {
+        // note stateNumber has no real dataValue
+        return this._node.stateNumber.nodeId.value.toString();
+    }
+    get nodeId() {
+        // note stateNumber has no real dataValue
+        return this._node.nodeId;
+    }
+    toString() {
+        return "state " + this.browseName + " stateNumber :" + this.stateNumber.toString();
+    }
+}
+exports.ProxyState = ProxyState;
+function makeProxyState(node) {
+    return new ProxyState(node);
+}
+exports.makeProxyState = makeProxyState;
+//# sourceMappingURL=proxy_state.js.map

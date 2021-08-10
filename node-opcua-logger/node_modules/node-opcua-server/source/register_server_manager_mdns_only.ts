@@ -1,0 +1,66 @@
+/**
+ * @module node-opcua-server
+ */
+// RegisterServerManagerMDNSONLY
+
+import { EventEmitter } from "events";
+import { assert } from "node-opcua-assert";
+import {
+    BonjourHolder
+} from "node-opcua-service-discovery";
+import { OPCUABaseServer } from "./base_server";
+import { IRegisterServerManager } from "./I_register_server_manager";
+
+/**
+ * a RegisterServerManager that declare the server the OPCUA Bonjour service
+ * available on the current computer
+ */
+export class RegisterServerManagerMDNSONLY
+  extends EventEmitter
+    implements IRegisterServerManager {
+
+    public discoveryServerEndpointUrl: string = "";
+
+    private server?: OPCUABaseServer;
+    private bonjour: BonjourHolder;
+
+    constructor(options: any) {
+        super();
+        this.server = options.server;
+        assert(this.server);
+        assert(this.server instanceof OPCUABaseServer);
+        this.bonjour = new BonjourHolder();
+    }
+
+    public stop(callback: () => void) {
+        if (this.bonjour) {
+            this.bonjour._stop_announcedOnMulticastSubnet();
+        }
+        setImmediate(() => {
+            this.emit("serverUnregistered");
+            setImmediate(callback);
+        });
+    }
+
+    public start(callback: () => void) {
+        if (!this.server) {
+            throw new Error("internal error");
+        }
+        assert(this.server instanceof OPCUABaseServer);
+
+        this.bonjour._announcedOnMulticastSubnet({
+            capabilities: this.server.capabilitiesForMDNS,
+            name: this.server.serverInfo.applicationUri!,
+            path: "/", // <- to do
+            port: this.server.endpoints[0].port,
+        });
+        setImmediate(() => {
+            this.emit("serverRegistered");
+            setImmediate(callback);
+        });
+    }
+
+    public dispose() {
+        this.server = undefined;
+    }
+}
